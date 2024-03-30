@@ -4,7 +4,7 @@ module.exports = {
     stylelint({
       config: {
         rules: {
-          'declaration-no-important': true,
+          'declaration-no-important': true, // 代码中出现 !important 时给出警告
         },
       },
     })

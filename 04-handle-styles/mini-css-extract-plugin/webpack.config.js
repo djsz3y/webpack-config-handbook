@@ -25,8 +25,8 @@ module.exports = {
   plugins: [
     new htmlPlugin({ title: path.basename(__dirname) }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: '/static/css/[name].css',
+      chunkFilename: '/static/css/[id].css',
     })
   ],
   devServer: {

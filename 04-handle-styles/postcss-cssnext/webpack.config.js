@@ -1,23 +1,27 @@
-const path = require('path');
-const htmlPlugin = require('html-webpack-plugin');
+const path = require("path");
+const htmlPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    filename: '[name].js',
+    filename: "[name].js",
   },
-  mode: 'development',
+  mode: "development",
   module: {
     rules: [
       {
         test: /\.css/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
-      }
+        use: [
+          { loader: "style-loader", options: { sourceMap: true } },
+          { loader: "css-loader", options: { sourceMap: true } },
+          { loader: "postcss-loader", options: { sourceMap: true } },
+        ],
+      },
     ],
   },
   plugins: [new htmlPlugin({ title: path.basename(__dirname) })],
   devServer: {
-    publicPath: '/dist/',
+    publicPath: "/dist/",
     port: 3000,
   },
 };
